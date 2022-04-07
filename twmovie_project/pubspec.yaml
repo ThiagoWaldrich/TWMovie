@@ -29,6 +29,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  dartz: ^0.9.2
+  dio: ^3.0.10
+  intl: ^0.16.1
   tmdb_api:
   google_fonts:
 

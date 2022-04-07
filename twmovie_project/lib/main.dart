@@ -1,30 +1,32 @@
 import 'package:flutter/material.dart';
 
-void main()=> runApp(MyApp());
+void main()=>runApp(new MyApp());
 
 class MyApp extends StatelessWidget{
-  @override 
+  @override  
   Widget build(BuildContext context){
     return MaterialApp(  
+      home:Home(),
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(  
-        primarySwatch: Colors.blue,
-      ),
-      home: Home(),
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        primaryColor: Colors.green),
     );
   }
 }
-class Home extends StatelessWidget {
+
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() =>_HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:Center(  
-        child:Text("Fonte",style:TextStyle(  
-          fontSize: 50,
-          fontFamily: "Rubik",
-        ))
-      )
-      
+      appBar: AppBar(title: Text('TWMovie', style: TextStyle(
+        fontFamily:'Rubik',
+      )),),
     );
   }
 }
