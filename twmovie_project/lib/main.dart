@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tmdb_api/tmdb_api.dart';
+import 'package:twmovie_project/utils/text.dart';
+
+import 'app/trending.dart';
 
 void main()=>runApp(new MyApp());
 
@@ -53,9 +56,14 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('TWMovie', style: TextStyle(
-        fontFamily:'Rubik',
-      )),),
-    );
+      backgroundColor:Colors.deepPurple ,
+      appBar: AppBar(backgroundColor: Colors.transparent,
+        title: Modified_Text(text:'TWMovie')),
+        body:ListView(  
+          children: [
+            TrendingMovies(trending:topMovies)
+          ],
+        )
+      );
   }
 }
