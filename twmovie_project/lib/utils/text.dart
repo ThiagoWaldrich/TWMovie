@@ -6,7 +6,7 @@ class Modified_Text extends StatelessWidget {
   final Color color;
   final double size;
 
-  const Modified_Text({Key? key, this.text = '',  this.color=Colors.white,  this.size = 18}) : super(key: key);
+  const Modified_Text({Key? key, this.text = '',  this.color=Colors.white,  this.size = 16}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Text(

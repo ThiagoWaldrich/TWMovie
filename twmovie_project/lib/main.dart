@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:tmdb_api/tmdb_api.dart';
+import 'package:twmovie_project/app/MelhorAvaliados.dart';
+import 'package:twmovie_project/app/Tv.dart';
 import 'package:twmovie_project/utils/text.dart';
 
-import 'app/trending.dart';
+import 'app/TrendingMovies.dart';
 
 void main()=>runApp(new MyApp());
 
@@ -26,7 +28,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   List topMovies = [];
-  List melhorAvaliados = [];
+  List filmesMelhorAvaliados = [];
   List tv = [];
   final String apikey = '9bbb9b92261517b932c8896fe1266c79';
   final readAccesstoken = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5YmJiOWI5MjI2MTUxN2I5MzJjODg5NmZlMTI2NmM3OSIsInN1YiI6IjYyNGUwN2Q2NTQ1MDhkMDA5YzdkYmIwMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mqWJ-fPJCpRvYe4QM1vTxJ-_prAmCTYSXg2VNu739HE';
@@ -47,7 +49,7 @@ class _HomeState extends State<Home> {
 
     setState(() {
       topMovies = topMoviesresult['results'];
-      melhorAvaliados = melhorAvaliadosresult['results'];
+      filmesMelhorAvaliados = melhorAvaliadosresult['results'];
       tv = tvresult['results'];
     });
     print(topMovies);
@@ -58,10 +60,12 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor:Colors.deepPurple ,
       appBar: AppBar(backgroundColor: Colors.transparent,
-        title: Modified_Text(text:'TWMovie')),
+        title: Modified_Text(text:'TWMovie', size: 30)),
         body:ListView(  
           children: [
-            TrendingMovies(trending:topMovies)
+            TV(tv:tv),
+            MelhorAvaliados(melhorAvaliados: filmesMelhorAvaliados),
+            TrendingMovies(trending:topMovies),
           ],
         )
       );

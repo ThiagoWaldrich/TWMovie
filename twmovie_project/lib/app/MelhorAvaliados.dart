@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:twmovie_project/utils/text.dart';
 
-class TrendingMovies extends StatelessWidget {
+class MelhorAvaliados extends StatelessWidget {
 
-  final List trending;
+  final List melhorAvaliados;
 
-  const TrendingMovies({Key? key, required this.trending}) : super(key: key);
+  const MelhorAvaliados({Key? key, required this.melhorAvaliados}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,10 +13,10 @@ class TrendingMovies extends StatelessWidget {
       child:Column(  
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Modified_Text(text:"Top Filmes",size:26),
-          SizedBox(height:5,),
-          Container(height:270,
-          child: ListView.builder(itemCount: trending.length,
+          Modified_Text(text:"Melhor avaliados",size:26),
+          SizedBox(height:10,),
+          Container(height:250,
+          child: ListView.builder(itemCount: melhorAvaliados.length,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index){
             return InkWell(
@@ -24,19 +24,19 @@ class TrendingMovies extends StatelessWidget {
                 
               },
               child:Container(
-                width: 140,
+                width: 135,
                 child: Column( 
                   children: [
                     Container( 
-                      height: 200,
+                      height: 185,
                       decoration: BoxDecoration(image: DecorationImage(image: NetworkImage(
-                        'https://image.tmdb.org/t/p/w500'+trending[index]['poster_path']
+                        'https://image.tmdb.org/t/p/w500'+melhorAvaliados[index]['poster_path']
                       ),
                       ),
                       ),
                     ),
-                    Container(child:Modified_Text(text:trending[index]['title']!=null?
-                    trending[index]['title']:'Carregando...'),)
+                    Container(child:Modified_Text(text:melhorAvaliados[index]['title']!=null?
+                    melhorAvaliados[index]['title']:'Carregando...'),)
                   ],
                 )
               )
