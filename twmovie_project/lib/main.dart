@@ -3,6 +3,7 @@ import 'package:tmdb_api/tmdb_api.dart';
 import 'package:twmovie_project/app/MelhorAvaliados.dart';
 import 'package:twmovie_project/app/Tv.dart';
 import 'package:twmovie_project/utils/text.dart';
+import 'package:twmovie_project/utils/title.dart';
 
 import 'app/TrendingMovies.dart';
 
@@ -60,7 +61,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor:Colors.deepPurple ,
       appBar: AppBar(backgroundColor: Colors.transparent,
-        title: Modified_Text(text:'TWMovie', size: 30)),
+        title: Modified_Title(text:'TWMovie', size: 30)),
         body:ListView(  
           children: [
             TV(tv:tv),

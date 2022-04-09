@@ -2,6 +2,7 @@ import 'dart:ffi';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:twmovie_project/utils/text.dart';
+import 'package:twmovie_project/utils/title.dart';
 
 void nothing(){
   return;
@@ -14,11 +15,11 @@ class TrendingMovies extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.all(4),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Modified_Text(text: "Mais assistidos", size: 26),
+          Modified_Title(text: "Mais assistidos", size: 26),
           SizedBox(
             height: 10,
           ),
@@ -31,7 +32,7 @@ class TrendingMovies extends StatelessWidget {
                 return InkWell(
                   onTap: () {},
                   child: Container(
-                    width: 140,
+                    width: 134,
                     child: Column(children: [
                       Container(
                         height: 185,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:twmovie_project/utils/text.dart';
+import 'package:twmovie_project/utils/title.dart';
 
 class MelhorAvaliados extends StatelessWidget {
 
@@ -9,12 +10,12 @@ class MelhorAvaliados extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.all(4),
       child:Column(  
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Modified_Text(text:"Melhor avaliados",size:26),
-          SizedBox(height:10,),
+          Modified_Title(text:"Filmes melhor avaliados",size:26,),
+          SizedBox(height:5,),
           Container(height:250,
           child: ListView.builder(itemCount: melhorAvaliados.length,
           scrollDirection: Axis.horizontal,
