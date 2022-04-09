@@ -35,8 +35,8 @@ class TV extends StatelessWidget {
                       ),
                       ),
                     ),
-                    Container(child:Modified_Text(text:tv[index]['title']!=null?
-                    tv[index]['title']:'Carregando...'),)
+                    Container(child:Modified_Text(text:tv[index]['original_name']!=null?
+                    tv[index]['original_name']:'Carregando...'),)
                   ],
                 )
               )
