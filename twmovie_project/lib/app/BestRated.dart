@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:twmovie_project/utils/text.dart';
 import 'package:twmovie_project/utils/title.dart';
+import 'package:twmovie_project/Information.dart';
 
 class MelhorAvaliados extends StatelessWidget {
 
@@ -22,7 +23,19 @@ class MelhorAvaliados extends StatelessWidget {
           itemBuilder: (context, index){
             return InkWell(
               onTap: (){
-                
+                Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Description(
+                                  name: melhorAvaliados[index]['title'],
+                                  bannerurl: 'https://image.tmdb.org/t/p/w500' +
+                                      melhorAvaliados[index]['backdrop_path'],
+                                  posterurl: 'https://image.tmdb.org/t/p/w500' +
+                                      melhorAvaliados[index]['poster_path'],
+                                  description: melhorAvaliados[index]['overview'],
+                                  vote:melhorAvaliados[index]['vote_average'].toString(),
+                                  launch_on:melhorAvaliados[index]['release_date']
+                                )));
               },
               child:Container(
                 width: 135,
@@ -36,7 +49,8 @@ class MelhorAvaliados extends StatelessWidget {
                       ),
                       ),
                     ),
-                    Container(child:Modified_Text(text:melhorAvaliados[index]['title']!=null?
+                    Container(child:Modified_Text(
+                      text:melhorAvaliados[index]['title']!=null?
                     melhorAvaliados[index]['title']:'Carregando...'),)
                   ],
                 )

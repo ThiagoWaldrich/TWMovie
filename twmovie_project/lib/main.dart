@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tmdb_api/tmdb_api.dart';
-import 'package:twmovie_project/app/MelhorAvaliados.dart';
+import 'package:twmovie_project/app/BestRated.dart';
 import 'package:twmovie_project/app/Tv.dart';
 import 'package:twmovie_project/utils/text.dart';
 import 'package:twmovie_project/utils/title.dart';

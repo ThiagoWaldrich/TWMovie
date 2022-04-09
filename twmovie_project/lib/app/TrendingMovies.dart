@@ -1,12 +1,9 @@
 import 'dart:ffi';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
+import 'package:twmovie_project/Information.dart';
 import 'package:twmovie_project/utils/text.dart';
 import 'package:twmovie_project/utils/title.dart';
-
-void nothing(){
-  return;
-}
 
 class TrendingMovies extends StatelessWidget {
   final List trending;
@@ -30,7 +27,21 @@ class TrendingMovies extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Description(
+                                  name: trending[index]['title'],
+                                  bannerurl: 'https://image.tmdb.org/t/p/w500' +
+                                      trending[index]['backdrop_path'],
+                                  posterurl: 'https://image.tmdb.org/t/p/w500' +
+                                      trending[index]['poster_path'],
+                                  description: trending[index]['overview'],
+                                  vote:trending[index]['vote_average'].toString(),
+                                  launch_on:trending[index]['release_date']
+                                )));
+                  },
                   child: Container(
                     width: 134,
                     child: Column(children: [
