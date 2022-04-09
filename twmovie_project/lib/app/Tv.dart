@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tmdb_api/tmdb_api.dart';
 import 'package:twmovie_project/utils/text.dart';
 import 'package:twmovie_project/utils/title.dart';
-import 'package:twmovie_project/Information.dart';
+import 'package:twmovie_project/information.dart';
 
 
 class TV extends StatelessWidget {
@@ -16,7 +16,7 @@ class TV extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Modified_Title(text:"Descubra", size: 26),
+          Modified_Title(text:"Filmes mais populares", size: 26),
           SizedBox(
             height: 10,
           ),

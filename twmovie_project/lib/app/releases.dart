@@ -1,14 +1,14 @@
 import 'dart:ffi';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
-import 'package:twmovie_project/Information.dart';
+import 'package:twmovie_project/information.dart';
 import 'package:twmovie_project/utils/text.dart';
 import 'package:twmovie_project/utils/title.dart';
 
-class TrendingMovies extends StatelessWidget {
-  final List trending;
+class Releases extends StatelessWidget {
+  final List releases;
 
-  const TrendingMovies({Key? key, required this.trending}) : super(key: key);
+  const Releases({Key? key, required this.releases}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,14 +16,14 @@ class TrendingMovies extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Modified_Title(text: "Mais assistidos", size: 26),
+          Modified_Title(text: "Lançamentos", size: 26),
           SizedBox(
             height: 10,
           ),
           Container(
             height: 270,
             child: ListView.builder(
-              itemCount: trending.length,
+              itemCount: releases.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return InkWell(
@@ -32,15 +32,15 @@ class TrendingMovies extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                             builder: (context) => Description(
-                                name: trending[index]['title'],
+                                name: releases[index]['title'],
                                 bannerurl: 'https://image.tmdb.org/t/p/w500' +
-                                    trending[index]['backdrop_path'],
+                                    releases[index]['backdrop_path'],
                                 posterurl: 'https://image.tmdb.org/t/p/w500' +
-                                    trending[index]['poster_path'],
-                                description: trending[index]['overview'],
+                                    releases[index]['poster_path'],
+                                description: releases[index]['overview'],
                                 vote:
-                                    trending[index]['vote_average'].toString(),
-                                launch_on: trending[index]['release_date'])));
+                                    releases[index]['vote_average'].toString(),
+                                launch_on: releases[index]['release_date'])));
                   },
                   child: Container(
                     width: 134,
@@ -51,15 +51,15 @@ class TrendingMovies extends StatelessWidget {
                           image: DecorationImage(
                             image: NetworkImage(
                                 'https://image.tmdb.org/t/p/w500' +
-                                    trending[index]['poster_path']),
+                                    releases[index]['poster_path']),
                           ),
                         ),
                       ),
                       Container(
                         child: Modified_Text(
-                            text: trending[index]['title'] != null
-                                ? trending[index]['title']
-                                : trending[index]['original_name']),
+                            text: releases[index]['title'] != null
+                                ? releases[index]['title']
+                                : releases[index]['original_name']),
                       ),
                     ]),
                   ),
