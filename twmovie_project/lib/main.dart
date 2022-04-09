@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:tmdb_api/tmdb_api.dart';
 import 'package:twmovie_project/app/BestRated.dart';
@@ -44,9 +46,9 @@ class _HomeState extends State<Home> {
     TMDB tmdbWithCustomLogs = TMDB(ApiKeys(apikey, readAccesstoken),
     logConfig: ConfigLogger(showErrorLogs: true, showLogs: true)
     );
-    Map topMoviesresult = await  tmdbWithCustomLogs.v3.trending.getTrending();
+    Map topMoviesresult = await  tmdbWithCustomLogs.v3.movies.getUpcoming();
     Map melhorAvaliadosresult = await  tmdbWithCustomLogs.v3.movies.getTopRated();
-    Map tvresult = await  tmdbWithCustomLogs.v3.tv.getPouplar();
+    Map tvresult = await  tmdbWithCustomLogs.v3.movies.getNowPlaying();
 
     setState(() {
       topMovies = topMoviesresult['results'];

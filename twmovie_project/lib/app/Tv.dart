@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:tmdb_api/tmdb_api.dart';
 import 'package:twmovie_project/utils/text.dart';
 import 'package:twmovie_project/utils/title.dart';
+import 'package:twmovie_project/Information.dart';
 
 
 class TV extends StatelessWidget {
@@ -14,7 +16,7 @@ class TV extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Modified_Title(text:"Séries populares", size: 26),
+          Modified_Title(text:"Descubra", size: 26),
           SizedBox(
             height: 10,
           ),
@@ -25,7 +27,21 @@ class TV extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return InkWell(
-                    onTap: () {},
+                    onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Description(
+                                name: tv[index]['title'],
+                                bannerurl: 'https://image.tmdb.org/t/p/w500' +
+                                    tv[index]['backdrop_path'],
+                                posterurl: 'https://image.tmdb.org/t/p/w500' +
+                                    tv[index]['poster_path'],
+                                description: tv[index]['overview'],
+                                vote:
+                                    tv[index]['vote_average'].toString(),
+                                launch_on: tv[index]['release_date'])));
+                  },
                     child: Container(
                         padding: EdgeInsets.all(3),
                         width: 250,
@@ -39,7 +55,7 @@ class TV extends StatelessWidget {
                                 image: DecorationImage(
                                     image: NetworkImage(
                                       'https://image.tmdb.org/t/p/w500' +
-                                          tv[index]['backdrop_path'],
+                                          tv[index]['poster_path'],
                                     ),
                                     fit: BoxFit.cover),
                               ),
@@ -49,8 +65,8 @@ class TV extends StatelessWidget {
                             ),
                             Container(
                               child: Modified_Text(
-                                  text: tv[index]['original_name'] != null
-                                      ? tv[index]['original_name']
+                                  text: tv[index]['title'] != null
+                                      ? tv[index]['title']
                                       : 'Carregando...'),
                             )
                           ],
