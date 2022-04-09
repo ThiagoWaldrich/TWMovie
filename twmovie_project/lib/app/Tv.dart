@@ -55,7 +55,7 @@ class TV extends StatelessWidget {
                                 image: DecorationImage(
                                     image: NetworkImage(
                                       'https://image.tmdb.org/t/p/w500' +
-                                          tv[index]['poster_path'],
+                                          tv[index]['backdrop_path'],
                                     ),
                                     fit: BoxFit.cover),
                               ),

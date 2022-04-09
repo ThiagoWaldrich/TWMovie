@@ -48,7 +48,7 @@ class _HomeState extends State<Home> {
     );
     Map topMoviesresult = await  tmdbWithCustomLogs.v3.movies.getUpcoming();
     Map melhorAvaliadosresult = await  tmdbWithCustomLogs.v3.movies.getTopRated();
-    Map tvresult = await  tmdbWithCustomLogs.v3.movies.getNowPlaying();
+    Map tvresult = await  tmdbWithCustomLogs.v3.movies.getPouplar();
 
     setState(() {
       topMovies = topMoviesresult['results'];
