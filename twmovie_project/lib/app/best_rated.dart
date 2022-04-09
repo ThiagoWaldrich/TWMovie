@@ -60,7 +60,7 @@ class BestRated extends StatelessWidget {
                               child: Modified_Text(
                                   text: bests[index]['title'] != null
                                       ? bests[index]['title']
-                                      : 'Carregando...'),
+                                      : 'Error'),
                             )
                           ],
                         )));

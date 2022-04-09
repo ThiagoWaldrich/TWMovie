@@ -38,7 +38,7 @@ class Description extends StatelessWidget {
           Container(
               padding: EdgeInsets.all(10),
               child: Modified_Text(
-                  text: name != null ? name : 'Not Loaded', size: 24)),
+                  text: name != null ? name : 'Error', size: 24)),
           Container(
               padding: EdgeInsets.only(left: 10),
               child:
