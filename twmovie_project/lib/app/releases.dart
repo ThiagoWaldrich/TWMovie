@@ -6,9 +6,9 @@ import 'package:twmovie_project/utils/text.dart';
 import 'package:twmovie_project/utils/title.dart';
 
 class Releases extends StatelessWidget {
-  final List releases;
+  final List movie_releases;
 
-  const Releases({Key? key, required this.releases}) : super(key: key);
+  const Releases({Key? key, required this.movie_releases}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,7 +23,7 @@ class Releases extends StatelessWidget {
           Container(
             height: 270,
             child: ListView.builder(
-              itemCount: releases.length,
+              itemCount: movie_releases.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return InkWell(
@@ -32,15 +32,16 @@ class Releases extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                             builder: (context) => Description(
-                                name: releases[index]['title'],
+                                name: movie_releases[index]['title'],
                                 bannerurl: 'https://image.tmdb.org/t/p/w500' +
-                                    releases[index]['backdrop_path'],
+                                    movie_releases[index]['backdrop_path'],
                                 posterurl: 'https://image.tmdb.org/t/p/w500' +
-                                    releases[index]['poster_path'],
-                                description: releases[index]['overview'],
-                                vote:
-                                    releases[index]['vote_average'].toString(),
-                                launch_on: releases[index]['release_date'])));
+                                    movie_releases[index]['poster_path'],
+                                description: movie_releases[index]['overview'],
+                                vote: movie_releases[index]['vote_average']
+                                    .toString(),
+                                launch_on: movie_releases[index]
+                                    ['release_date'])));
                   },
                   child: Container(
                     width: 134,
@@ -51,15 +52,15 @@ class Releases extends StatelessWidget {
                           image: DecorationImage(
                             image: NetworkImage(
                                 'https://image.tmdb.org/t/p/w500' +
-                                    releases[index]['poster_path']),
+                                    movie_releases[index]['poster_path']),
                           ),
                         ),
                       ),
                       Container(
                         child: Modified_Text(
-                            text: releases[index]['title'] != null
-                                ? releases[index]['title']
-                                : releases[index]['original_name']),
+                            text: movie_releases[index]['title'] != null
+                                ? movie_releases[index]['title']
+                                : movie_releases[index]['original_name']),
                       ),
                     ]),
                   ),

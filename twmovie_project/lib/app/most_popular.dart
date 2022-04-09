@@ -4,11 +4,10 @@ import 'package:twmovie_project/utils/text.dart';
 import 'package:twmovie_project/utils/title.dart';
 import 'package:twmovie_project/information.dart';
 
-
 class TV extends StatelessWidget {
-  final List tv;
+  final List most_popular_movies;
 
-  const TV({Key? key, required this.tv}) : super(key: key);
+  const TV({Key? key, required this.most_popular_movies}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,32 +15,31 @@ class TV extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Modified_Title(text:"Filmes mais populares", size: 26),
+          Modified_Title(text: "Filmes mais populares", size: 26),
           SizedBox(
             height: 10,
           ),
           Container(
             height: 200,
             child: ListView.builder(
-              itemCount: tv.length,
+              itemCount: most_popular_movies.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return InkWell(
                     onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => Description(
-                                name: tv[index]['title'],
-                                bannerurl: 'https://image.tmdb.org/t/p/w500' +
-                                    tv[index]['backdrop_path'],
-                                posterurl: 'https://image.tmdb.org/t/p/w500' +
-                                    tv[index]['poster_path'],
-                                description: tv[index]['overview'],
-                                vote:
-                                    tv[index]['vote_average'].toString(),
-                                launch_on: tv[index]['release_date'])));
-                  },
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Description(
+                                  name: most_popular_movies[index]['title'],
+                                  bannerurl: 'https://image.tmdb.org/t/p/w500' +
+                                      most_popular_movies[index]['backdrop_path'],
+                                  posterurl: 'https://image.tmdb.org/t/p/w500' +
+                                      most_popular_movies[index]['poster_path'],
+                                  description: most_popular_movies[index]['overview'],
+                                  vote: most_popular_movies[index]['vote_average'].toString(),
+                                  launch_on: most_popular_movies[index]['release_date'])));
+                    },
                     child: Container(
                         padding: EdgeInsets.all(3),
                         width: 250,
@@ -55,7 +53,7 @@ class TV extends StatelessWidget {
                                 image: DecorationImage(
                                     image: NetworkImage(
                                       'https://image.tmdb.org/t/p/w500' +
-                                          tv[index]['backdrop_path'],
+                                          most_popular_movies[index]['backdrop_path'],
                                     ),
                                     fit: BoxFit.cover),
                               ),
@@ -65,8 +63,8 @@ class TV extends StatelessWidget {
                             ),
                             Container(
                               child: Modified_Text(
-                                  text: tv[index]['title'] != null
-                                      ? tv[index]['title']
+                                  text: most_popular_movies[index]['title'] != null
+                                      ? most_popular_movies[index]['title']
                                       : 'Carregando...'),
                             )
                           ],
