@@ -1,12 +1,9 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:tmdb_api/tmdb_api.dart';
 import 'package:twmovie_project/app/best_rated.dart';
 import 'package:twmovie_project/app/most_popular.dart';
 import 'package:twmovie_project/utils/text.dart';
 import 'package:twmovie_project/utils/title.dart';
-
 import 'app/releases.dart';
 
 class Home extends StatefulWidget {

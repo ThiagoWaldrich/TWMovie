@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:twmovie_project/utils/text.dart';
+import 'package:twmovie_project/utils/title.dart';
 
 class Description extends StatelessWidget {
   final String name, description, bannerurl, posterurl, vote, launch_on;
@@ -14,7 +15,10 @@ class Description extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          title: Modified_Title(text: 'TWMovie', size: 30)),
+      backgroundColor: Colors.deepPurple,
       body: Container(
         child: ListView(children: [
           Container(
@@ -37,8 +41,8 @@ class Description extends StatelessWidget {
           SizedBox(height: 15),
           Container(
               padding: EdgeInsets.all(10),
-              child: Modified_Text(
-                  text: name != null ? name : 'Error', size: 24)),
+              child:
+                  Modified_Text(text: name != null ? name : 'Error', size: 24)),
           Container(
               padding: EdgeInsets.only(left: 10),
               child:

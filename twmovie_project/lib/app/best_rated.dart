@@ -15,7 +15,7 @@ class BestRated extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Modified_Title(
-            text: "Filmes melhor avaliados",
+            text: "Best rated movies",
             size: 26,
           ),
           SizedBox(
@@ -32,7 +32,7 @@ class BestRated extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Description(
+                              builder: (BuildContext context) => Description(
                                   name: bests[index]['title'],
                                   bannerurl: 'https://image.tmdb.org/t/p/w500' +
                                       bests[index]['backdrop_path'],

@@ -1,4 +1,3 @@
-import 'dart:ffi';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:twmovie_project/information.dart';
@@ -16,7 +15,7 @@ class Releases extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Modified_Title(text: "Lançamentos", size: 26),
+          Modified_Title(text: "Releases", size: 26),
           SizedBox(
             height: 10,
           ),

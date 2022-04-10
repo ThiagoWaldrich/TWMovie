@@ -15,7 +15,7 @@ class TV extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Modified_Title(text: "Filmes mais populares", size: 26),
+          Modified_Title(text: "Most popular movies", size: 26),
           SizedBox(
             height: 10,
           ),
