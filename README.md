@@ -1,6 +1,6 @@
-#Instruções para executar o projeto.
+Instruções para executar o projeto.
 
-#No Vscode
+No Vscode
 
 1 - Faça download do projeto.
 2 - Acesse o diretório twmovie_project
