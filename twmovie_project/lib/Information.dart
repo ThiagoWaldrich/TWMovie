@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:twmovie_project/utils/subtitle.dart';
 import 'package:twmovie_project/utils/text.dart';
 import 'package:twmovie_project/utils/title.dart';
 
@@ -36,7 +37,7 @@ class Description extends StatelessWidget {
                 ),
                 Positioned(
                     bottom: 10,
-                    child: Modified_Text(text: '⭐ Average Rating - ' + vote)),
+                    child: Modified_Subtitle(text: '⭐ Average Rating - ' + vote)),
               ])),
           SizedBox(height: 15),
           Container(
