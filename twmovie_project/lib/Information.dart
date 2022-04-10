@@ -18,7 +18,7 @@ class Description extends StatelessWidget {
       appBar: AppBar(
           backgroundColor: Colors.transparent,
           title: Modified_Title(text: 'TWMovie', size: 30)),
-      backgroundColor: Colors.deepPurple,
+      backgroundColor: Colors.deepPurpleAccent,
       body: Container(
         child: ListView(children: [
           Container(
