@@ -9,7 +9,7 @@ No Vscode
     de abrir com o VsCode
 5 - Vá em Terminal > New Terminal no canto superior
 6 - Verifique se está no diretório twmovie_project
-7 - Execute o comando "flutter run --no-sound-null-safetyflutter" sem as aspas
+7 - Execute o comando "flutter run --no-sound-null-safety" sem as aspas
 obs: Por padrão o aplicativo abrirá em seu navegador
 obs2:Caso queira abrir em um dispositivo móvel, basta conecta-lo ao seu dispositivo principal
     e alterar no canto inferior direito do vscode o dispositivo que vai rodar a aplicação
